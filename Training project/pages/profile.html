@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SMEMS – Profile</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <!-- TODO: الـ Backend يُحدِّد الـ sidebar حسب { user.role } -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="logo-text"><strong>SMEMS</strong><small>Medical Equipment</small></div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="staff-dashboard.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+      <a href="my-requests.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> My Requests</a>
+      <a href="notifications.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Notifications</a>
+      <a href="devices.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Devices</a>
+      <a href="profile.html" class="nav-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Profile</a>
+      <a href="edit-profile.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit Profile</a>
+    </nav>
+    <div class="sidebar-footer">
+      <!-- TODO: action="{ url_for('auth.logout') }" -->
+      <a href="../index.html" class="logout-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Logout</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+  <div class="top-bar">
+    <span class="top-date" id="live-clock">Sunday, April 20, 2026</span>
+    <div class="top-right">
+      <a href="notifications.html" class="notif-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-badge">2</span>
+      </a>
+      <a href="profile.html" class="user-chip">
+        <div style="text-align:right;">
+          <div class="uname">Nurse Sarah Ahmed</div>
+          <div class="urole">Medical Staff / ICU</div>
+        </div>
+        <div class="avatar">SA</div>
+      </a>
+    </div>
+  </div>
+
+    <div class="page">
+
+      <div class="page-header"><div class="page-title">Profile Page</div></div>
+     
+      <div class="profile-hero">
+        <div class="profile-av">SA</div>
+        <div style="flex:1;">
+          <div class="profile-name">Dr. Sarah Ahmed</div>
+          <span class="badge b-staff" style="margin-top:6px;display:inline-flex;">Medical Staff</span>
+          <div class="profile-meta">
+            <span>ICU Department</span>
+            <span style="opacity:.3;">|</span>
+            <span>ID: EMP-1023</span>
+          </div>
+        </div>
+        <a href="edit-profile.html" class="btn btn-primary">Edit Profile</a>
+      </div>
+      <div class="info-section">
+        <div class="info-section-ttl">Personal Information</div>
+        <div class="info-2col">
+          <div class="info-field"><div class="field-lbl">Full Name</div><div class="field-val">Dr. Sarah Ahmed</div></div>
+          <div class="info-field"><div class="field-lbl">Username</div><div class="field-val">sarah123</div></div>
+          <div class="info-field"><div class="field-lbl">Email</div><div class="field-val">sarah@email.com</div></div>
+          <div class="info-field"><div class="field-lbl">Phone</div><div class="field-val">0790000000</div></div>
+        </div>
+      </div>
+      <div class="info-section">
+        <div class="info-section-ttl">Work Information</div>
+        <div class="info-2col">
+          <div class="info-field"><div class="field-lbl">Role</div><div class="field-val">Medical Staff</div></div>
+          <div class="info-field"><div class="field-lbl">Department</div><div class="field-val">ICU</div></div>
+          <div class="info-field"><div class="field-lbl">Position</div><div class="field-val">Doctor</div></div>
+          <div class="info-field"><div class="field-lbl">Joined Date</div><div class="field-val">2022-01-10</div></div>
+        </div>
+      </div>
+      <div class="info-section">
+        <div class="info-section-ttl">Security</div>
+        <a href="reset-password.html" class="btn btn-primary">🔒 Change Password</a>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

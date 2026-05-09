@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SMEMS – Staff Dashboard</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="logo-text"><strong>SMEMS</strong><small>Medical Equipment</small></div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="staff-dashboard.html" class="nav-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+      <a href="my-requests.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> My Requests</a>
+      <a href="notifications.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Notifications</a>
+      <a href="devices.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Devices</a>
+      <a href="profile.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Profile</a>
+      <a href="edit-profile.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit Profile</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../index.html" class="logout-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Logout</a>
+    </div>
+  </aside>
+
+  <main class="main">
+  <div class="top-bar">
+    <span class="top-date" id="live-clock">Sunday, April 20, 2026</span>
+    <div class="top-right">
+      <a href="notifications.html" class="notif-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-badge">2</span>
+      </a>
+      <a href="profile.html" class="user-chip">
+        <div style="text-align:right;">
+          <div class="uname">Nurse Sarah Ahmed</div>
+          <div class="urole">Medical Staff / ICU</div>
+        </div>
+        <div class="avatar">SA</div>
+      </a>
+    </div>
+  </div>
+
+    <div class="page">
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <div><div class="stat-label">Total Devices</div><div class="stat-value">3</div><div class="stat-desc">In ICU</div></div>
+          <div class="stat-icon" style="background:var(--primary-lt);color:var(--primary);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        </div>
+        <div class="stat-card">
+          <div><div class="stat-label">Available</div><div class="stat-value">2</div><div class="stat-desc">Operational devices</div></div>
+          <div class="stat-icon" style="background:var(--success-lt);color:var(--success);">✓</div>
+        </div>
+        <div class="stat-card">
+          <div><div class="stat-label">Maintenance Needed</div><div class="stat-value">1</div><div class="stat-desc">Requires attention</div></div>
+          <div class="stat-icon" style="background:var(--warning-lt);color:var(--warning);">⏱</div>
+        </div>
+        <div class="stat-card">
+          <div><div class="stat-label">Out of Service</div><div class="stat-value">0</div><div class="stat-desc">Currently unavailable</div></div>
+          <div class="stat-icon" style="background:var(--danger-lt);color:var(--danger);">⚠</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="filter-bar">
+          <div class="search-box">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="sd-q" placeholder="Search devices..." oninput="filterTable('sd-q','sd-table')">
+          </div>
+          <select class="filter-select" id="sd-st" onchange="filterBySelect('sd-st','sd-table',2)">
+            <option value="">Status</option>
+          <option>Operational</option><option>Maintenance Needed</option>
+            <option>Under Maintenance</option><option>Out of Service</option>
+          </select>
+          <select class="filter-select" id="sd-rk" onchange="filterBySelect('sd-rk','sd-table',3)">
+            <option value="">Risk</option>
+          <option>Low Risk</option><option>Medium Risk</option>
+            <option>High Risk</option><option>Critical Risk</option>
+          </select>
+          <button class="btn btn-primary" onclick="showRequestForm('','')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Request Maintenance
+          </button>
+        </div>
+        <div class="table-wrap">
+          <!-- TODO: loop through department_devices from backend -->
+          <table class="tbl" id="sd-table">
+            <thead>
+              <tr><th>Device Name</th><th>Serial Number</th><th>Status</th><th>Risk Level</th><th>Last Maintenance</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+              <!-- staff dashboard shows 6 columns (no ID), different from devices page -->
+              <tr>
+                <td><div class="dev-name">Ventilator Model X200</div><div class="dev-model">X200</div></td>
+                <td><code>VNT-2023-001</code></td>
+                <td><span class="badge b-operational">Operational</span></td>
+                <td><span class="badge b-high">High Risk</span></td>
+                <td><div style="font-size:12px;color:var(--text-2);">Preventive Maintenance</div><div style="font-size:11px;color:var(--text-3);">3/16/2026</div></td>
+                <td class="actions-cell">
+                  <button class="ibtn ibtn-view" title="Device info"
+                    data-dev-id="dev-001" data-name="Ventilator Model X200" data-model="X200"
+                    data-status="Operational" data-risk="High Risk"
+                    data-manufacturer="MedTech Solutions" data-supplier="Global Medical Supplies"
+                    data-serial="VNT-2023-001" data-department="ICU" data-location="ICU - Room 101"
+                    data-purchase-date="1/15/2023" data-warranty-expiry="1/15/2026"
+                    data-lifespan="10 years" data-failures="1" data-next-maint="5/15/2026"
+                    data-accessories="Breathing circuits, Filters, Humidifier"
+                    data-last-maint-type="Corrective Maintenance" data-last-maint-date="3/16/2026"
+                    data-last-maint-detail="Replaced pressure valve and calibrated sensors"
+                   onclick="showDeviceInfo(this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ibtn ibtn-wrench" title="Maintenance history"
+                    data-dev-id="dev-001" data-name="Ventilator Model X200"
+                    data-status="Operational" data-risk="High Risk"
+                    data-history-html="&lt;div style=&apos;margin-bottom:16px;&apos;&gt;&lt;div style=&apos;font-weight:600;margin-bottom:10px;&apos;&gt;Preventive Maintenance&lt;/div&gt;&lt;div style=&apos;background:var(--bg);border-radius:6px;padding:12px;margin-bottom:8px;&apos;&gt;&lt;div style=&apos;font-size:12px;color:var(--text-3);&apos;&gt;1/15/2025&lt;/div&gt;&lt;div style=&apos;font-size:13px;margin-top:4px;&apos;&gt;Full system check, filter replacement, calibration&lt;/div&gt;&lt;/div&gt;&lt;div style=&apos;background:var(--bg);border-radius:6px;padding:12px;&apos;&gt;&lt;div style=&apos;font-size:12px;color:var(--text-3);&apos;&gt;7/15/2025&lt;/div&gt;&lt;div style=&apos;font-size:13px;margin-top:4px;&apos;&gt;Quarterly preventive maintenance completed&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&apos;font-weight:600;margin-bottom:10px;&apos;&gt;Corrective Maintenance&lt;/div&gt;&lt;div style=&apos;background:var(--bg);border-radius:6px;padding:12px;&apos;&gt;&lt;div style=&apos;font-size:12px;color:var(--text-3);&apos;&gt;3/16/2026&lt;/div&gt;&lt;div style=&apos;font-size:13px;margin-top:4px;&apos;&gt;Replaced pressure valve and calibrated sensors&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
+                    onclick="showMaintHistory(this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></button>
+                </td>
+              </tr>
+              <tr>
+                <td><div class="dev-name">ECG Monitor Pro</div><div class="dev-model">ECG-500</div></td>
+              <td><code>ECG-2022-002</code></td>
+                <td><span class="badge b-needed">Maintenance Needed</span></td>
+                <td><span class="badge b-medium">Medium Risk</span></td>
+                <td><div style="font-size:12px;color:var(--text-2);">Preventive Maintenance</div><div style="font-size:11px;color:var(--text-3);">1/10/2026</div></td>
+                <td class="actions-cell">
+                  <button class="ibtn ibtn-view" title="Device info"
+                    data-dev-id="dev-002" data-name="ECG Monitor Pro" data-model="ECG-500"
+                    data-status="Maintenance Needed" data-risk="Medium Risk"
+                    data-manufacturer="CardioTech" data-supplier="MedSupply Co"
+                    data-serial="ECG-2022-002" data-department="ICU" data-location="ICU - Room 203"
+                    data-purchase-date="6/10/2022" data-warranty-expiry="6/10/2025"
+                    data-lifespan="8 years" data-failures="2" data-next-maint="4/26/2026"
+                    data-accessories="Electrode pads, Lead cables, Mounting bracket"
+                    data-last-maint-type="Preventive Maintenance" data-last-maint-date="1/10/2026"
+                    data-last-maint-detail="Routine check completed"
+                    onclick="showDeviceInfo(this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ibtn ibtn-wrench" title="Maintenance history"
+                data-dev-id="dev-002" data-name="ECG Monitor Pro"
+                    data-status="Maintenance Needed" data-risk="Medium Risk"
+                    data-history-html="&lt;div style=&apos;margin-bottom:16px;&apos;&gt;&lt;div style=&apos;font-weight:600;margin-bottom:10px;&apos;&gt;Preventive Maintenance&lt;/div&gt;&lt;div style=&apos;background:var(--bg);border-radius:6px;padding:12px;&apos;&gt;&lt;div style=&apos;font-size:12px;color:var(--text-3);&apos;&gt;6/10/2025&lt;/div&gt;&lt;div style=&apos;font-size:13px;margin-top:4px;&apos;&gt;Annual preventive maintenance&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div style=&apos;font-weight:600;margin-bottom:10px;&apos;&gt;Corrective Maintenance&lt;/div&gt;&lt;div style=&apos;background:var(--bg);border-radius:6px;padding:12px;&apos;&gt;&lt;div style=&apos;font-size:12px;color:var(--text-3);&apos;&gt;11/20/2025&lt;/div&gt;&lt;div style=&apos;font-size:13px;margin-top:4px;&apos;&gt;Screen backlight replaced&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
+                    onclick="showMaintHistory(this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></button>
+                </td>
+              </tr>
+              <tr>
+               <td><div class="dev-name">Infusion Pump Smart</div><div class="dev-model">IP-300</div></td>
+                <td><code>INF-2024-003</code></td>
+           <td><span class="badge b-operational">Operational</span></td>
+                <td><span class="badge b-low">Low Risk</span></td>
+              <td><div style="font-size:12px;color:var(--text-2);">Preventive Maintenance</div><div style="font-size:11px;color:var(--text-3);">8/1/2025</div></td>
+                <td class="actions-cell">
+                  <button class="ibtn ibtn-view" title="Device info"
+                    data-dev-id="dev-003" data-name="Infusion Pump Smart" data-model="IP-300"
+                    data-status="Operational" data-risk="Low Risk"
+                    data-manufacturer="PumpTech" data-supplier="BioMed Supply"
+                    data-serial="INF-2024-003" data-department="ICU" data-location="ICU - Room 105"
+                    data-purchase-date="2/1/2024" data-warranty-expiry="2/1/2027"
+                    data-lifespan="7 years" data-failures="0" data-next-maint="8/1/2026"
+                    data-accessories="IV sets, Drug library module"
+                    data-last-maint-type="Preventive Maintenance" data-last-maint-date="8/1/2025"
+                    data-last-maint-detail="Calibration and software update"
+                    onclick="showDeviceInfo(this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="ibtn ibtn-wrench" title="Maintenance history"
+                    data-dev-id="dev-003" data-name="Infusion Pump Smart"
+                    data-status="Operational" data-risk="Low Risk"
+                    data-history-html="&lt;div&gt;&lt;div style=&apos;font-weight:600;margin-bottom:10px;&apos;&gt;Preventive Maintenance&lt;/div&gt;&lt;div style=&apos;background:var(--bg);border-radius:6px;padding:12px;&apos;&gt;&lt;div style=&apos;font-size:12px;color:var(--text-3);&apos;&gt;8/1/2025&lt;/div&gt;&lt;div style=&apos;font-size:13px;margin-top:4px;&apos;&gt;Calibration and software update&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;"
+                   onclick="showMaintHistory(this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></button>
+                </td>
+              </tr>
+            </tbody>
+           </table>
+         </div>
+     </div>
+
+     </div>
+
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

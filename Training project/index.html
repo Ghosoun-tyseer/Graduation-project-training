@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SMEMS – Sign In</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="login-page">
+
+  <div class="login-brand">
+    <div class="login-logo">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    </div>
+    <h1>SMEMS</h1>
+    <p>Smart Medical Equipment Management System</p>
+  </div>
+
+  <div class="login-card">
+    <h2>Sign In</h2>
+
+    <div class="form-group">
+      <label class="form-label">Username</label>
+      <div class="input-wrap">
+        <span class="i-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </span>
+        <input type="text" class="form-control" name="username" placeholder="Enter your username">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Password</label>
+      <div class="input-wrap">
+        <span class="i-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </span>
+        <input type="password" class="form-control" name="password" placeholder="Enter your password">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Role</label>
+      <select class="form-control" name="role">
+        <option value="">Select your role</option>
+        <option value="admin">Administrator</option>
+        <option value="engineer">Engineer</option>
+        <option value="staff">Medical Staff</option>
+      </select>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;">
+      <a href="pages/admin-dashboard.html"
+         onclick="localStorage.setItem('smems_role','admin')"
+         class="btn btn-outline btn-sm" style="justify-content:center;font-size:12px;">Admin Demo</a>
+      <a href="pages/engineer-dashboard.html"
+         onclick="localStorage.setItem('smems_role','engineer')"
+         class="btn btn-outline btn-sm" style="justify-content:center;font-size:12px;">Engineer Demo</a>
+      <a href="pages/staff-dashboard.html"
+         onclick="localStorage.setItem('smems_role','staff')"
+         class="btn btn-outline btn-sm" style="justify-content:center;font-size:12px;">Staff Demo</a>
+    </div>
+     <button type="button" class="btn btn-primary btn-full">Sign In</button>
+
+    <div style="text-align:center;margin-top:14px;">
+      <a class="forgot-link" href="pages/reset-password.html">Forget your password?</a>
+    </div>
+  </div>
+
+  <div class="login-foot">© 2026 SMEMS. All rights reserved.</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

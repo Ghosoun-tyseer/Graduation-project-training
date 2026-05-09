@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SMEMS – Add User</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="logo-text"><strong>SMEMS</strong><small>Medical Equipment</small></div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="admin-dashboard.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+      <a href="devices.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Devices</a>
+      <a href="maintenance.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Maintenance</a>
+      <a href="reports.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Reports</a>
+      <a href="users.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Users</a>
+      <a href="notifications.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Notifications</a>
+      <a href="profile.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Profile</a>
+      <a href="edit-profile.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit Profile</a>
+      <a href="add-user.html" class="nav-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg> Add Users</a>
+    </nav>
+    <div class="sidebar-footer">
+     
+      <a href="../index.html" class="logout-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Logout</a>
+    </div>
+  </aside>
+
+
+  <main class="main">
+  
+  <div class="top-bar">
+    <span class="top-date" id="live-clock">Sunday, April 20, 2026</span>
+    <div class="top-right">
+      <a href="notifications.html" class="notif-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-badge">1</span>
+      </a>
+      <a href="profile.html" class="user-chip">
+        <div style="text-align:right;">
+          <div class="uname">Dr. Ahmed Hassan</div>
+          <div class="urole">Administrator / Administration</div>
+        </div>
+        <div class="avatar">AH</div>
+      </a>
+    </div>
+  </div>
+
+    <div class="page">
+
+      <div class="page-header"><div class="page-title">Add User</div></div>
+     
+      <div class="card" style="max-width:860px;">
+        <div style="display:flex;align-items:center;gap:16px;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:20px;">
+          <div class="profile-av" id="av-p">?</div>
+          <div style="flex:1;">
+            <input class="form-control" placeholder="Full Name"
+              oninput="document.getElementById('av-p').textContent=this.value.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase()||'?'"
+              style="margin-bottom:8px;">
+            <select class="form-control"><option value="">Role</option><option>Administrator</option><option>Engineer</option><option>Medical Staff</option></select>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">Personal Information</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label req">Full Name</label><input class="form-control" name="full_name" placeholder="Full Name"></div>
+            <div class="form-group"><label class="form-label req">Username</label><input class="form-control" name="username" placeholder="username"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label req">Email</label><input class="form-control" type="email" name="email" placeholder="name@hospital.com"></div>
+            <div class="form-group"><label class="form-label">Phone</label><input class="form-control" name="phone" placeholder="07XXXXXXXX"></div>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-section-title">Work Information</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label req">Role</label>
+              <select class="form-control" name="role">
+                <option value="">Select Role</option>
+                <option value="admin">Administrator</option>
+                <option value="engineer">Engineer</option>
+                <option value="staff">Medical Staff</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label req">Department</label>
+              <select class="form-control" name="department">
+                <option value="">Select Department</option>
+                <option>ICU</option><option>Radiology</option><option>Emergency Room</option>
+                <option>Cardiology</option><option>Surgery</option><option>Maintenance</option>
+                <option>Administration</option><option>Inventory</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Position</label><input class="form-control" name="position" placeholder="Doctor / Nurse / Engineer..."></div>
+            <div class="form-group"><label class="form-label">Join Date</label><input class="form-control" type="date" name="join_date"></div>
+          </div>
+        </div>
+        <div class="form-section" style="margin-bottom:0;">
+          <div class="form-section-title">Security</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label req">Password</label><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="form-group"><label class="form-label req">Confirm Password</label><input class="form-control" type="password" name="password_confirm" placeholder="Confirm Password"></div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px;">
+          <a href="users.html" class="btn btn-outline">Cancel</a>
+          <!-- TODO: type="submit" مع form action -->
+          <button type="button" class="btn btn-primary" onclick="showToast('Connect backend to save user','info')">Create User</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

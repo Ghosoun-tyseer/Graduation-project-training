@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SMEMS – My Requests</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="logo-text"><strong>SMEMS</strong><small>Medical Equipment</small></div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="staff-dashboard.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+      <a href="my-requests.html" class="nav-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> My Requests</a>
+      <a href="notifications.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> Notifications</a>
+      <a href="devices.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> Devices</a>
+      <a href="profile.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Profile</a>
+      <a href="edit-profile.html" class="nav-link "><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Edit Profile</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../index.html" class="logout-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Logout</a>
+    </div>
+  </aside>
+
+  <main class="main">
+  <div class="top-bar">
+<span class="top-date" id="live-clock">Sunday, April 20, 2026</span>
+    <div class="top-right">
+      <a href="notifications.html" class="notif-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="notif-badge">2</span>
+      </a>
+      <a href="profile.html" class="user-chip">
+        <div style="text-align:right;">
+          <div class="uname">Nurse Sarah Ahmed</div>
+          <div class="urole">Medical Staff / ICU</div>
+        </div>
+        <div class="avatar">SA</div>
+      </a>
+    </div>
+  </div>
+
+    <div class="page">
+
+      <div class="page-header">
+        <div class="page-title">My Requests</div>
+        <div class="page-subtitle">Track your maintenance requests</div>
+      </div>
+
+      <div class="tab-bar">
+        <a href="my-requests.html"                    class="tab-btn active">All Requests</a>
+        <a href="my-requests.html?status=pending"     class="tab-btn">Pending</a>
+        <a href="my-requests.html?status=in_progress" class="tab-btn">In Progress</a>
+        <a href="my-requests.html?status=completed"   class="tab-btn">Completed</a>
+      </div>
+
+      <div class="req-card pending">
+        <div class="rc-head">
+          <span class="rc-title">ECG Monitor Pro</span>
+          <span class="badge b-pending">Pending</span>
+          <span class="badge b-high">High</span>
+          <button class="ibtn ibtn-view" style="margin-left:auto;" title="View details"
+            data-req-id="req-001" data-dept="ICU" data-date="4/10/2026"
+            data-device-name="ECG Monitor Pro" data-model="ECG-500"
+            data-serial="ECG-2022-002" data-dev-id="dev-002"
+            data-issue="Display malfunction"
+            data-desc="Screen flickering and showing distorted readings intermittently."
+            data-alt="true" data-eng-notes=""
+            onclick="showRequestDetail(this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        </div>
+        <div class="rc-desc">Display malfunction</div>
+        <div class="rc-detail">Screen flickering and showing distorted readings intermittently.</div>
+        <div class="rc-foot">
+          <span class="rc-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4/10/2026</span>
+          <span class="rc-alt alt-yes">✓ Alternative available</span>
+        </div>
+      </div>
+
+      <div class="req-card pending">
+        <div class="rc-head">
+          <span class="rc-title">Ventilator Model X200</span>
+          <span class="badge b-pending">Pending</span>
+          <span class="badge b-high">High</span>
+          <button class="ibtn ibtn-view" style="margin-left:auto;" title="View details"
+            data-req-id="req-004" data-dept="ICU" data-date="4/12/2026"
+            data-device-name="Ventilator Model X200" data-model="X200"
+            data-serial="VNT-2023-001" data-dev-id="dev-001"
+            data-issue="Alarm system fault"
+            data-desc="Alarm not triggering during simulated pressure drop test."
+            data-alt="false" data-eng-notes=""
+            onclick="showRequestDetail(this)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        </div>
+        <div class="rc-desc">Alarm system fault</div>
+        <div class="rc-detail">Alarm not triggering during simulated pressure drop test.</div>
+        <div class="rc-foot">
+          <span class="rc-date"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4/12/2026</span>
+          <span class="rc-alt alt-no">✗ No alternative</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>
