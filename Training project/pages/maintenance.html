@@ -18,7 +18,8 @@
       <div class="logo-text"><strong>SMEMS</strong><small>Medical Equipment</small></div>
     </div>
 
-    <nav class="sidebar-nav" id="sidebar-nav"></nav>
+     <nav class="sidebar-nav" id="sidebar-nav"></nav>
+    
     <div class="sidebar-footer">
       <a href="../index.html" class="logout-link"
          onclick="localStorage.removeItem('smems_role')">
@@ -239,69 +240,8 @@
 </div>
 
 <script src="../js/main.js"></script>
-<script>
 
-(function applyRole() {
 
-  var role = localStorage.getItem('smems_role') || 'engineer';
-
-  /* ── 1. إخفاء أزرار الإجراءات عن الأدمن ── */
-  if (role === 'admin') {
-    document.querySelectorAll('.eng-action').forEach(function(el) {
-      el.style.display = 'none';
-    });
-  }
-
-  var users = {
-    engineer: { name: 'Inv. Manager Fatima', initials: 'FM', roleLabel: 'Engineer / Maintenance' },
-    admin:    { name: 'Dr. Ahmed Hassan',    initials: 'AH', roleLabel: 'Administrator / Administration' }
-  };
-  var u = users[role] || users.engineer;
-  document.getElementById('top-name').textContent   = u.name;
-  document.getElementById('top-role').textContent   = u.roleLabel;
-  document.getElementById('top-avatar').textContent = u.initials;
-  document.getElementById('top-date').textContent   =
-    new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-
-  document.getElementById('page-subtitle').textContent = role === 'engineer'
-    ? 'Track and manage all maintenance requests'
-    : 'View all maintenance requests';
-
-  var navLinks = {
-    engineer: [
-      ['engineer-dashboard.html', 'Dashboard',            'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z', false],
-      ['maintenance.html',        'Maintenance Requests', 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z', true],
-      ['devices.html',            'Devices',              'M22 12l-4 0-3 9L9 3l-3 9-4 0', false],
-      ['notifications.html',      'Notifications',        'M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9 M13.73 21a2 2 0 0 1-3.46 0', false],
-      ['profile.html',            'Profile',              'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2 M12 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0', false],
-      ['edit-profile.html',       'Edit Profile',         'M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7 M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z', false],
-    ],
-    admin: [
-      ['admin-dashboard.html',    'Dashboard',  'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z', false],
-      ['devices.html',            'Devices',    'M22 12l-4 0-3 9L9 3l-3 9-4 0', false],
-      ['maintenance.html',        'Maintenance','M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z', true],
-      ['reports.html',            'Reports',    'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6 M16 13H8 M16 17H8', false],
-      ['users.html',              'Users',      'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0-8 0 M23 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75', false],
-      ['notifications.html',      'Notifications','M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9 M13.73 21a2 2 0 0 1-3.46 0', false],
-      ['profile.html',            'Profile',    'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2 M12 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0-8 0', false],
-      ['edit-profile.html',       'Edit Profile','M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7 M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z', false],
-      ['add-user.html',           'Add Users',  'M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M8.5 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0-8 0 M20 8v6 M23 11h-6', false],
-    ]
-  };
-
-  var links = navLinks[role] || navLinks.engineer;
-  document.getElementById('sidebar-nav').innerHTML = links.map(function(l) {
-    return '<a href="' + l[0] + '" class="nav-link' + (l[3] ? ' active' : '') + '">' +
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
-        l[2].split(' M').map(function(p, i) {
-          return '<path d="' + (i === 0 ? p : 'M' + p) + '"/>';
-        }).join('') +
-      '</svg> ' + l[1] +
-    '</a>';
-  }).join('');
-
-})();
-</script>
 
 </body>
 </html>
