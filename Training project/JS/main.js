@@ -467,46 +467,154 @@ function renderSidebar() {
 
   if (!sidebar) return;
 
+  const currentPage = window.location.pathname.split("/").pop();
+
   let links = '';
 
-  // ADMIN
+  // ================= ADMIN =================
   if (role === 'admin') {
 
     links = `
-      <a href="admin-dashboard.html" class="nav-link">Dashboard</a>
-      <a href="devices.html" class="nav-link">Devices</a>
-      <a href="maintenance.html" class="nav-link">Maintenance</a>
-      <a href="reports.html" class="nav-link">Reports</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="notifications.html" class="nav-link">Notifications</a>
-      <a href="profile.html" class="nav-link">Profile</a>
-      <a href="edit-profile.html" class="nav-link">Edit Profile</a>
+
+      <a href="admin-dashboard.html" class="nav-link ${currentPage === 'admin-dashboard.html' ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        Dashboard
+      </a>
+
+      <a href="devices.html" class="nav-link ${currentPage === 'devices.html' ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+        Devices
+      </a>
+
+      <a href="maintenance.html" class="nav-link ${currentPage === 'maintenance.html' ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>
+        Maintenance
+      </a>
+
+      <a href="reports.html" class="nav-link ${currentPage === 'reports.html' ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        Reports
+      </a>
+
+      <a href="users.html" class="nav-link ${currentPage === 'users.html' ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        Users
+      </a>
+
+      <a href="add-user.html" class="nav-link ${currentPage === 'add-user.html' ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="8.5" cy="7" r="4"/>
+          <line x1="20" y1="8" x2="20" y2="14"/>
+          <line x1="17" y1="11" x2="23" y2="11"/>
+        </svg>
+        Add User
+      </a>
+
+      <a href="notifications.html" class="nav-link ${currentPage === 'notifications.html' ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        </svg>
+        Notifications
+      </a>
+
+      <a href="profile.html" class="nav-link ${currentPage === 'profile.html' ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        Profile
+      </a>
+
+      <a href="edit-profile.html" class="nav-link ${currentPage === 'edit-profile.html' ? 'active' : ''}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+        </svg>
+        Edit Profile
+      </a>
     `;
   }
 
-  // STAFF
+  // ================= STAFF =================
   else if (role === 'staff') {
 
     links = `
-      <a href="staff-dashboard.html" class="nav-link">Dashboard</a>
-      <a href="my-requests.html" class="nav-link">My Requests</a>
-      <a href="notifications.html" class="nav-link">Notifications</a>
-      <a href="devices.html" class="nav-link">Devices</a>
-      <a href="profile.html" class="nav-link">Profile</a>
-      <a href="edit-profile.html" class="nav-link">Edit Profile</a>
+
+      <a href="staff-dashboard.html" class="nav-link ${currentPage === 'staff-dashboard.html' ? 'active' : ''}">
+        Dashboard
+      </a>
+
+      <a href="my-requests.html" class="nav-link ${currentPage === 'my-requests.html' ? 'active' : ''}">
+        My Requests
+      </a>
+
+      <a href="notifications.html" class="nav-link ${currentPage === 'notifications.html' ? 'active' : ''}">
+        Notifications
+      </a>
+
+      <a href="devices.html" class="nav-link ${currentPage === 'devices.html' ? 'active' : ''}">
+        Devices
+      </a>
+
+      <a href="profile.html" class="nav-link ${currentPage === 'profile.html' ? 'active' : ''}">
+        Profile
+      </a>
+
+      <a href="edit-profile.html" class="nav-link ${currentPage === 'edit-profile.html' ? 'active' : ''}">
+        Edit Profile
+      </a>
     `;
   }
 
-  // ENGINEER
+  // ================= ENGINEER =================
   else if (role === 'engineer') {
 
     links = `
-      <a href="engineer-dashboard.html" class="nav-link">Dashboard</a>
-      <a href="maintenance.html" class="nav-link">Maintenance Requests</a>
-      <a href="devices.html" class="nav-link">Devices</a>
-      <a href="notifications.html" class="nav-link">Notifications</a>
-      <a href="profile.html" class="nav-link">Profile</a>
-      <a href="edit-profile.html" class="nav-link">Edit Profile</a>
+
+      <a href="engineer-dashboard.html" class="nav-link ${currentPage === 'engineer-dashboard.html' ? 'active' : ''}">
+        Dashboard
+      </a>
+
+      <a href="maintenance.html" class="nav-link ${currentPage === 'maintenance.html' ? 'active' : ''}">
+        Maintenance Requests
+      </a>
+
+      <a href="devices.html" class="nav-link ${currentPage === 'devices.html' ? 'active' : ''}">
+        Devices
+      </a>
+
+      <a href="notifications.html" class="nav-link ${currentPage === 'notifications.html' ? 'active' : ''}">
+        Notifications
+      </a>
+
+      <a href="profile.html" class="nav-link ${currentPage === 'profile.html' ? 'active' : ''}">
+        Profile
+      </a>
+
+      <a href="edit-profile.html" class="nav-link ${currentPage === 'edit-profile.html' ? 'active' : ''}">
+        Edit Profile
+      </a>
     `;
   }
 
