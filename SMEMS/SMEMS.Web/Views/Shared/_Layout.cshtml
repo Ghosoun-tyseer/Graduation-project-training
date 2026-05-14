@@ -1,0 +1,80 @@
+@{
+    var currentUser = ViewBag.CurrentUser as CurrentUserViewModel;
+    var userRole = currentUser?.Role ?? "";
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - SMEMS</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/styles.css">
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    @if (currentUser != null)
+    {
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            @if (userRole == "admin")
+            {
+                <partial name="_AdminSidebar" />
+            }
+            else if (userRole == "engineer")
+            {
+                <partial name="_EngineerSidebar" />
+            }
+            else if (userRole == "staff")
+            {
+                <partial name="_StaffSidebar" />
+            }
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Top Bar -->
+                <partial name="_TopBar" />
+
+                <!-- Page Content -->
+                <div class="content-wrapper">
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success">
+                            <i class="fas fa-check-circle"></i>
+                            @TempData["SuccessMessage"]
+                            <button type="button" class="alert-close" onclick="this.parentElement.remove()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    }
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger">
+                            <i class="fas fa-exclamation-circle"></i>
+                            @TempData["ErrorMessage"]
+                            <button type="button" class="alert-close" onclick="this.parentElement.remove()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    }
+
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+    }
+    else
+    {
+        @RenderBody()
+    }
+
+    <!-- JavaScript -->
+    <script src="~/js/main.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
